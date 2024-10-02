@@ -30,4 +30,5 @@
 - IP info: [ipinfo.io](https://ipinfo.io/), [ip-api.com](https://ip-api.com/), [ip.sb](https://ip.sb/), [`[curl] ip.gs`](https://ip.gs/), [ipapi.co](https://ipapi.co/), [ipgeolocation.io](https://ipgeolocation.io/)
 - IP Fraud Risk: [scamalytics](https://scamalytics.com/), [whoer](https://whoer.net/)
 - FDNS: [bgp.tools](https://bgp.tools/)
-- [Public DNS Server List](https://public-dns.info/)
+- [Public DNS Server List](https://public-dns.info/), [IP/DNS detect](https://ipleak.net/), [WebRTC](https://browserleaks.com/webrtc)
+
