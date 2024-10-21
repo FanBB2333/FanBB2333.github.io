@@ -1,9 +1,9 @@
-name: Hexo Deploy
+name: Hexo Deploy to Github Pages
 
 on:
   push:
     branches:
-      - main  # 监听你的源代码分支，通常为 main 或 master
+      - main
 
 jobs:
   build-deploy:
