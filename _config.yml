@@ -102,5 +102,10 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
+  token: ${{ secrets.GITHUB_TOKEN }}
   repo: git@github.com:FanBB2333/FanBB2333.github.io.git
   branch: gh-pages
+
+  # message: [message]
+  # name: [git user]
+  # email: [git email]
