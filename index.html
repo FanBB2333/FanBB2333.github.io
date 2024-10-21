@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Proxy/README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/21/Proxy/README/" class="article-date">
+  <time class="dt-published" datetime="2024-10-21T08:02:53.486Z" itemprop="datePublished">2024-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Where-is-the-WALL"><a href="#Where-is-the-WALL" class="headerlink" title="Where is the WALL?"></a>Where is the WALL?</h1><h2 id="Cloud-Service-Providers"><a href="#Cloud-Service-Providers" class="headerlink" title="Cloud Service Providers"></a>Cloud Service Providers</h2><h3 id="Oracle-Cloud"><a href="#Oracle-Cloud" class="headerlink" title="Oracle Cloud"></a>Oracle Cloud</h3><h3 id="Cloudflare"><a href="#Cloudflare" class="headerlink" title="Cloudflare"></a>Cloudflare</h3><h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><p>可以让CF协助托管域名，挂CF的CDN</p>
+<h4 id="CF-Workers"><a href="#CF-Workers" class="headerlink" title="CF Workers"></a>CF Workers</h4><ul>
+<li>什么是ProxyIP：是用于workers转发CF托管网站的服务器IP，用于workers访问CF系网站，参考<a target="_blank" rel="noopener" href="https://upsangel.com/security/vpn/cloudflare-worker-vless%E7%BF%BB%E7%89%86%E4%BB%A3%E7%90%86%E5%8E%9F%E7%90%86-proxyip%E7%B4%B0%E7%AF%80%E7%A0%94%E7%A9%B6/">这里</a></li>
+<li>什么是CF反代IP：理解为非官方的CF节点，或许可以理解为用户请求经过CF CDN的落地IP？参考<a target="_blank" rel="noopener" href="https://blog.tanglu.me/cloudflare_proxy_ip/">这里</a></li>
+</ul>
+<h4 id="Cloudflare-Trace-API"><a href="#Cloudflare-Trace-API" class="headerlink" title="Cloudflare Trace API"></a>Cloudflare Trace API</h4><p>通过访问<code>https://xxx/cdn-cgi/trace</code>可以查看当前访问的CF节点IP<br>例如访问<code>https://nodeseek.com/cdn-cgi/trace</code>, <code>https://www.cloudflare.com/cdn-cgi/trace</code></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fl：Cloudflare 服务器实例</span><br><span class="line">h：网站域名</span><br><span class="line">ip：当前访问者的IP地址</span><br><span class="line">ts：时间戳，格式为“秒.毫秒”（bash中生成同款时间戳的命令为date +%s.%3N）</span><br><span class="line">visit<span class="emphasis">_scheme：访问者使用的协议</span></span><br><span class="line"><span class="emphasis">usg：访问者使用的UserAgent信息</span></span><br><span class="line"><span class="emphasis">colo：被访问的Cloudflare数据中心的所在位置，此处是由IANA定义的机场代码</span></span><br><span class="line"><span class="emphasis">sliver：请求是否被拆分成多个部分进行处理或传输</span></span><br><span class="line"><span class="emphasis">http：访问者使用的HTTP协议版本</span></span><br><span class="line"><span class="emphasis">loc：访问者的所在地（国家）</span></span><br><span class="line"><span class="emphasis">tls：访问者与服务器建立连接使用的TLS版本</span></span><br><span class="line"><span class="emphasis">sni：SNI加密或明文传输</span></span><br><span class="line"><span class="emphasis">warp：访问者是否使用了Warp服务</span></span><br><span class="line"><span class="emphasis">gateway：访问者是否使用了Cloudflare Gateway服务</span></span><br><span class="line"><span class="emphasis">rbi：访问者是否使用了Cloudflares Remote Browser Isolation(RBI)服务</span></span><br><span class="line"><span class="emphasis">kex：TLS密钥交换过程中使用的交换方式</span></span><br></pre></td></tr></table></figure>
+<p>参考<a target="_blank" rel="noopener" href="https://lxnchan.cn/cloudflare-trace.html">https://lxnchan.cn/cloudflare-trace.html</a></p>
+<h2 id="Proxy-Tools"><a href="#Proxy-Tools" class="headerlink" title="Proxy Tools"></a>Proxy Tools</h2><h3 id="Sing-Box"><a href="#Sing-Box" class="headerlink" title="Sing-Box"></a>Sing-Box</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/SagerNet/sing-box">sing-box</a></li>
+<li>订阅转换：<a target="_blank" rel="noopener" href="https://github.com/Toperlock/sing-box-subscribe/">sing-box-subscribe</a></li>
+</ul>
+<h3 id="Hiddify"><a href="#Hiddify" class="headerlink" title="Hiddify"></a>Hiddify</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/hiddify/hiddify-next">hiddify-next</a></li>
+</ul>
+<h2 id="Other-Tools"><a href="#Other-Tools" class="headerlink" title="Other Tools"></a>Other Tools</h2><ul>
+<li>Search Engine: <a target="_blank" rel="noopener" href="https://www.shodan.io/">shodan</a>, <a target="_blank" rel="noopener" href="https://en.fofa.info/">fofa</a>, <a target="_blank" rel="noopener" href="https://www.zoomeye.hk/">zoomeye</a></li>
+<li>IP info: <a target="_blank" rel="noopener" href="https://ipinfo.io/">ipinfo.io</a>, <a target="_blank" rel="noopener" href="https://ip-api.com/">ip-api.com</a>, <a target="_blank" rel="noopener" href="https://ip.sb/">ip.sb</a>, <a target="_blank" rel="noopener" href="https://ip.gs/"><code>[curl] ip.gs</code></a>, <a target="_blank" rel="noopener" href="https://ipapi.co/">ipapi.co</a>, <a target="_blank" rel="noopener" href="https://ipgeolocation.io/">ipgeolocation.io</a></li>
+<li>IP Fraud Risk: <a target="_blank" rel="noopener" href="https://scamalytics.com/">scamalytics</a>, <a target="_blank" rel="noopener" href="https://whoer.net/">whoer</a></li>
+<li>FDNS: <a target="_blank" rel="noopener" href="https://bgp.tools/">bgp.tools</a></li>
+<li><a target="_blank" rel="noopener" href="https://public-dns.info/">Public DNS Server List</a>, <a target="_blank" rel="noopener" href="https://ipleak.net/">IP&#x2F;DNS detect</a>, <a target="_blank" rel="noopener" href="https://browserleaks.com/webrtc">WebRTC</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/21/Proxy/README/" data-id="cm2iqc5nz0002qa510q0b1zu9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Install xrdp in macOS/Install xrdp in macOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/21/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" class="article-date">
+  <time class="dt-published" datetime="2024-10-21T08:02:53.485Z" itemprop="datePublished">2024-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Install-xrdp-in-macOS"><a href="#Install-xrdp-in-macOS" class="headerlink" title="Install xrdp in macOS"></a>Install xrdp in macOS</h1><h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p>implicit declaration error while building<br><img src="/../../../imgs/2023-12-22-09-47-26.png"><br>查了下可以指定<code>-std=c89</code>，不过试了试发现没有效果<br>于是直接去看源代码，报错的这行看起来是用来记录LOG的，全局搜索发现别的地方也有记录log的逻辑，复制过来，仍然报错，查找后发现是因为没有<code>stdio.h</code>头函数的原因，引入之后终于编译成功<br><img src="/../../../imgs/2023-12-22-10-08-52.png"></p>
+<p>编译好了xrdp，又要变异xorgxrdp<br>解决了文档中提到的X11的include问题，又遇到了新的问题<br><img src="/../../../imgs/2023-12-22-10-34-00.png"><br>参考<a target="_blank" rel="noopener" href="https://forums.opensuse.org/t/leap-15-4-xorgxrdp-problem-with-make/152223">这里</a>的解决方案换成老版本的xorgxrdp稳定版，但是还是报错</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Unofficial guide: <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/%5BWIP%5D-xrdp-on-macOS-(with-ulalaca)">[WIP] xrdp on macOS (with ulalaca)</a>, <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/Building-on-OSX-(not-official)">Building on OSX (not official)</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/21/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" data-id="cm2iqc5nu0000qa510sjoeocm" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Photo backup/Photo backup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/21/Photo%20backup/Photo%20backup/" class="article-date">
+  <time class="dt-published" datetime="2024-10-21T08:02:53.485Z" itemprop="datePublished">2024-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Automatically-backup-photos"><a href="#Automatically-backup-photos" class="headerlink" title="Automatically backup photos"></a>Automatically backup photos</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/21/Photo%20backup/Photo%20backup/" data-id="cm2iqc5ny0001qa51fu2k1c68" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/21/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-10-21T07:56:21.998Z" itemprop="datePublished">2024-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/21/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/21/hello-world/" data-id="cm2iq4m270000tt514h5f3y6b" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/21/Proxy/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/21/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/21/Photo%20backup/Photo%20backup/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/21/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
