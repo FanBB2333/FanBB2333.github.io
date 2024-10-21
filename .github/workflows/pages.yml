@@ -1,0 +1,41 @@
+name: Hexo Deploy
+
+on:
+  push:
+    branches:
+      - main  # 监听你的源代码分支，通常为 main 或 master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Generate Hexo files
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          npx hexo deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
