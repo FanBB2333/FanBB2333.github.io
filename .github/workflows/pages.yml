@@ -8,10 +8,10 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # permissions:
+    #   pages: write      # to deploy to Pages
+    #   id-token: write   # to verify the deployment originates from an appropriate source
 
     steps:
       - name: Checkout code
@@ -42,4 +42,4 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           hexo deploy
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
