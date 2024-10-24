@@ -8,24 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="https://fanbb2333.github.io/FanBB2333.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="FanBB2333">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/FanBB2333.github.io/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/FanBB2333.github.io/favicon.png">
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/FanBB2333.github.io/css/style.css">
 
   
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/FanBB2333.github.io/fancybox/jquery.fancybox.min.css">
 
   
   
@@ -39,7 +39,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/FanBB2333.github.io/" id="logo">Hexo</a>
       </h1>
       
     </div>
@@ -47,20 +47,20 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/FanBB2333.github.io/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/FanBB2333.github.io/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/FanBB2333.github.io/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
         <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://FanBB2333.github.io/FanBB2333.github.io"></form>
       </div>
     </div>
   </div>
@@ -71,8 +71,8 @@
   
     <article id="post-Install xrdp in macOS/Install xrdp in macOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" class="article-date">
-  <time class="dt-published" datetime="2024-10-24T02:04:05.493Z" itemprop="datePublished">2024-10-24</time>
+    <a href="/FanBB2333.github.io/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" class="article-date">
+  <time class="dt-published" datetime="2024-10-24T02:26:15.729Z" itemprop="datePublished">2024-10-24</time>
 </a>
     
   </div>
@@ -81,14 +81,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Install-xrdp-in-macOS"><a href="#Install-xrdp-in-macOS" class="headerlink" title="Install xrdp in macOS"></a>Install xrdp in macOS</h1><h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p>implicit declaration error while building<br><img src="/imgs/2023-12-22-09-47-26.png"><br>查了下可以指定<code>-std=c89</code>，不过试了试发现没有效果<br>于是直接去看源代码，报错的这行看起来是用来记录LOG的，全局搜索发现别的地方也有记录log的逻辑，复制过来，仍然报错，查找后发现是因为没有<code>stdio.h</code>头函数的原因，引入之后终于编译成功<br><img src="/imgs/2023-12-22-10-08-52.png"></p>
-<p>编译好了xrdp，又要变异xorgxrdp<br>解决了文档中提到的X11的include问题，又遇到了新的问题<br><img src="/imgs/2023-12-22-10-34-00.png"><br>参考<a target="_blank" rel="noopener" href="https://forums.opensuse.org/t/leap-15-4-xorgxrdp-problem-with-make/152223">这里</a>的解决方案换成老版本的xorgxrdp稳定版，但是还是报错</p>
+        <h1 id="Install-xrdp-in-macOS"><a href="#Install-xrdp-in-macOS" class="headerlink" title="Install xrdp in macOS"></a>Install xrdp in macOS</h1><h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p>implicit declaration error while building<br><img src="https://github.com/FanBB2333/FanBB2333.github.io/blob/main/imgs/2023-12-22-09-47-26.png?raw=true"><br>查了下可以指定<code>-std=c89</code>，不过试了试发现没有效果<br>于是直接去看源代码，报错的这行看起来是用来记录LOG的，全局搜索发现别的地方也有记录log的逻辑，复制过来，仍然报错，查找后发现是因为没有<code>stdio.h</code>头函数的原因，引入之后终于编译成功<br><img src="https://github.com/FanBB2333/FanBB2333.github.io/blob/main/imgs/2023-12-22-10-08-52.png?raw=true"></p>
+<p>编译好了xrdp，又要变异xorgxrdp<br>解决了文档中提到的X11的include问题，又遇到了新的问题<br><img src="https://github.com/FanBB2333/FanBB2333.github.io/blob/main/imgs/2023-12-22-10-34-00.png?raw=true"></p>
+<p>参考<a target="_blank" rel="noopener" href="https://forums.opensuse.org/t/leap-15-4-xorgxrdp-problem-with-make/152223">这里</a>的解决方案换成老版本的xorgxrdp稳定版，但是还是报错</p>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Unofficial guide: <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/%5BWIP%5D-xrdp-on-macOS-(with-ulalaca)">[WIP] xrdp on macOS (with ulalaca)</a>, <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/Building-on-OSX-(not-official)">Building on OSX (not official)</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" data-id="cm2iqc5nu0000qa510sjoeocm" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://fanbb2333.github.io/FanBB2333.github.io/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" data-id="cm2iqc5nu0000qa510sjoeocm" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -102,8 +103,8 @@
   
     <article id="post-Learning/go" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/10/24/Learning/go/" class="article-date">
-  <time class="dt-published" datetime="2024-10-24T02:04:05.493Z" itemprop="datePublished">2024-10-24</time>
+    <a href="/FanBB2333.github.io/2024/10/24/Learning/go/" class="article-date">
+  <time class="dt-published" datetime="2024-10-24T02:02:29.182Z" itemprop="datePublished">2024-10-24</time>
 </a>
     
   </div>
@@ -120,7 +121,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/24/Learning/go/" data-id="cm2mntvj70000dyooffst61oa" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://fanbb2333.github.io/FanBB2333.github.io/2024/10/24/Learning/go/" data-id="cm2mo3bg20000sh514pum2htp" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -134,7 +135,7 @@
   
     <article id="post-Proxy/README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/10/21/Proxy/README/" class="article-date">
+    <a href="/FanBB2333.github.io/2024/10/21/Proxy/README/" class="article-date">
   <time class="dt-published" datetime="2024-10-21T08:02:53.486Z" itemprop="datePublished">2024-10-21</time>
 </a>
     
@@ -170,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/21/Proxy/README/" data-id="cm2iqc5nz0002qa510q0b1zu9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://fanbb2333.github.io/FanBB2333.github.io/2024/10/21/Proxy/README/" data-id="cm2iqc5nz0002qa510q0b1zu9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -184,7 +185,7 @@
   
     <article id="post-Photo backup/Photo backup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/10/21/Photo%20backup/Photo%20backup/" class="article-date">
+    <a href="/FanBB2333.github.io/2024/10/21/Photo%20backup/Photo%20backup/" class="article-date">
   <time class="dt-published" datetime="2024-10-21T08:02:53.485Z" itemprop="datePublished">2024-10-21</time>
 </a>
     
@@ -198,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/21/Photo%20backup/Photo%20backup/" data-id="cm2iqc5ny0001qa51fu2k1c68" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://fanbb2333.github.io/FanBB2333.github.io/2024/10/21/Photo%20backup/Photo%20backup/" data-id="cm2iqc5ny0001qa51fu2k1c68" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -228,7 +229,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/FanBB2333.github.io/archives/2024/10/">October 2024</a></li></ul>
     </div>
   </div>
 
@@ -241,19 +242,19 @@
       <ul>
         
           <li>
-            <a href="/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
+            <a href="/FanBB2333.github.io/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/10/24/Learning/go/">(no title)</a>
+            <a href="/FanBB2333.github.io/2024/10/24/Learning/go/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/10/21/Proxy/README/">(no title)</a>
+            <a href="/FanBB2333.github.io/2024/10/21/Proxy/README/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/10/21/Photo%20backup/Photo%20backup/">(no title)</a>
+            <a href="/FanBB2333.github.io/2024/10/21/Photo%20backup/Photo%20backup/">(no title)</a>
           </li>
         
       </ul>
@@ -278,25 +279,25 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/FanBB2333.github.io/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/FanBB2333.github.io/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+<script src="/FanBB2333.github.io/js/jquery-3.6.4.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="/FanBB2333.github.io/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+<script src="/FanBB2333.github.io/js/script.js"></script>
 
 
 
