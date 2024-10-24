@@ -69,6 +69,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Install xrdp in macOS/Install xrdp in macOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" class="article-date">
+  <time class="dt-published" datetime="2024-10-24T02:04:05.493Z" itemprop="datePublished">2024-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Install-xrdp-in-macOS"><a href="#Install-xrdp-in-macOS" class="headerlink" title="Install xrdp in macOS"></a>Install xrdp in macOS</h1><h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p>implicit declaration error while building<br><img src="/imgs/2023-12-22-09-47-26.png"><br>查了下可以指定<code>-std=c89</code>，不过试了试发现没有效果<br>于是直接去看源代码，报错的这行看起来是用来记录LOG的，全局搜索发现别的地方也有记录log的逻辑，复制过来，仍然报错，查找后发现是因为没有<code>stdio.h</code>头函数的原因，引入之后终于编译成功<br><img src="/imgs/2023-12-22-10-08-52.png"></p>
+<p>编译好了xrdp，又要变异xorgxrdp<br>解决了文档中提到的X11的include问题，又遇到了新的问题<br><img src="/imgs/2023-12-22-10-34-00.png"><br>参考<a target="_blank" rel="noopener" href="https://forums.opensuse.org/t/leap-15-4-xorgxrdp-problem-with-make/152223">这里</a>的解决方案换成老版本的xorgxrdp稳定版，但是还是报错</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Unofficial guide: <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/%5BWIP%5D-xrdp-on-macOS-(with-ulalaca)">[WIP] xrdp on macOS (with ulalaca)</a>, <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/Building-on-OSX-(not-official)">Building on OSX (not official)</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" data-id="cm2iqc5nu0000qa510sjoeocm" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Learning/go" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/24/Learning/go/" class="article-date">
+  <time class="dt-published" datetime="2024-10-24T02:04:05.493Z" itemprop="datePublished">2024-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Learn-to-Use-Golang"><a href="#Learn-to-Use-Golang" class="headerlink" title="Learn to Use Golang"></a>Learn to Use <code>Golang</code></h1><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://makeoptim.com/golang/standards/project-layout/">golang 编程规范 - 项目目录结构</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/golang-standards/project-layout/blob/master/README.md">Standard Go Project Layout</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/24/Learning/go/" data-id="cm2mntvj70000dyooffst61oa" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Proxy/README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/10/21/Proxy/README/" class="article-date">
@@ -119,37 +182,6 @@
 
 
   
-    <article id="post-Install xrdp in macOS/Install xrdp in macOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/10/21/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" class="article-date">
-  <time class="dt-published" datetime="2024-10-21T08:02:53.485Z" itemprop="datePublished">2024-10-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Install-xrdp-in-macOS"><a href="#Install-xrdp-in-macOS" class="headerlink" title="Install xrdp in macOS"></a>Install xrdp in macOS</h1><h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p>implicit declaration error while building<br><img src="/../../../imgs/2023-12-22-09-47-26.png"><br>查了下可以指定<code>-std=c89</code>，不过试了试发现没有效果<br>于是直接去看源代码，报错的这行看起来是用来记录LOG的，全局搜索发现别的地方也有记录log的逻辑，复制过来，仍然报错，查找后发现是因为没有<code>stdio.h</code>头函数的原因，引入之后终于编译成功<br><img src="/../../../imgs/2023-12-22-10-08-52.png"></p>
-<p>编译好了xrdp，又要变异xorgxrdp<br>解决了文档中提到的X11的include问题，又遇到了新的问题<br><img src="/../../../imgs/2023-12-22-10-34-00.png"><br>参考<a target="_blank" rel="noopener" href="https://forums.opensuse.org/t/leap-15-4-xorgxrdp-problem-with-make/152223">这里</a>的解决方案换成老版本的xorgxrdp稳定版，但是还是报错</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Unofficial guide: <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/%5BWIP%5D-xrdp-on-macOS-(with-ulalaca)">[WIP] xrdp on macOS (with ulalaca)</a>, <a target="_blank" rel="noopener" href="https://github.com/neutrinolabs/xrdp/wiki/Building-on-OSX-(not-official)">Building on OSX (not official)</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/21/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" data-id="cm2iqc5nu0000qa510sjoeocm" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-Photo backup/Photo backup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/10/21/Photo%20backup/Photo%20backup/" class="article-date">
@@ -167,57 +199,6 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://example.com/2024/10/21/Photo%20backup/Photo%20backup/" data-id="cm2iqc5ny0001qa51fu2k1c68" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/10/21/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-10-21T07:56:21.998Z" itemprop="datePublished">2024-10-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/10/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/21/hello-world/" data-id="cm2iq4m270000tt514h5f3y6b" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -260,19 +241,19 @@
       <ul>
         
           <li>
+            <a href="/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/24/Learning/go/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2024/10/21/Proxy/README/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/10/21/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
-          </li>
-        
-          <li>
             <a href="/2024/10/21/Photo%20backup/Photo%20backup/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/10/21/hello-world/">Hello World</a>
           </li>
         
       </ul>
