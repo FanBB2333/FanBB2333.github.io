@@ -37,6 +37,10 @@ kex：TLS密钥交换过程中使用的交换方式
 ```
 参考https://lxnchan.cn/cloudflare-trace.html
 
+#### Cloudflare WARP
+- [f大的warp脚本](https://gitlab.com/fscarmen/warp)
+x-ui默认的xray配置在[here](./xray-default.json)
+
 ## Proxy Tools
 ### Sing-Box
 - [sing-box](https://github.com/SagerNet/sing-box)
