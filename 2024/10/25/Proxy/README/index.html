@@ -9,12 +9,12 @@
   <meta name="description" content="Where is the WALL?Cloud Service ProvidersOracle CloudCloudflareDNS可以让CF协助托管域名，挂CF的CDN CF Workers 什么是ProxyIP：是用于workers转发CF托管网站的服务器IP，用于workers访问CF系网站，参考这里 什么是CF反代IP：理解为非官方的CF节点，或许可以理解为用户请求经过CF CDN的落地I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2024/10/21/Proxy/README/index.html">
+<meta property="og:url" content="http://example.com/2024/10/25/Proxy/README/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Where is the WALL?Cloud Service ProvidersOracle CloudCloudflareDNS可以让CF协助托管域名，挂CF的CDN CF Workers 什么是ProxyIP：是用于workers转发CF托管网站的服务器IP，用于workers访问CF系网站，参考这里 什么是CF反代IP：理解为非官方的CF节点，或许可以理解为用户请求经过CF CDN的落地I">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-21T08:02:53.486Z">
-<meta property="article:modified_time" content="2024-10-21T08:02:53.486Z">
+<meta property="article:published_time" content="2024-10-25T05:52:16.461Z">
+<meta property="article:modified_time" content="2024-10-25T05:52:16.461Z">
 <meta property="article:author" content="FanBB2333">
 <meta name="twitter:card" content="summary">
   
@@ -73,8 +73,8 @@
       <div class="outer">
         <section id="main"><article id="post-Proxy/README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/10/21/Proxy/README/" class="article-date">
-  <time class="dt-published" datetime="2024-10-21T08:02:53.486Z" itemprop="datePublished">2024-10-21</time>
+    <a href="/2024/10/25/Proxy/README/" class="article-date">
+  <time class="dt-published" datetime="2024-10-25T05:52:16.461Z" itemprop="datePublished">2024-10-25</time>
 </a>
     
   </div>
@@ -91,6 +91,9 @@
 <h4 id="Cloudflare-Trace-API"><a href="#Cloudflare-Trace-API" class="headerlink" title="Cloudflare Trace API"></a>Cloudflare Trace API</h4><p>通过访问<code>https://xxx/cdn-cgi/trace</code>可以查看当前访问的CF节点IP<br>例如访问<code>https://nodeseek.com/cdn-cgi/trace</code>, <code>https://www.cloudflare.com/cdn-cgi/trace</code></p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fl：Cloudflare 服务器实例</span><br><span class="line">h：网站域名</span><br><span class="line">ip：当前访问者的IP地址</span><br><span class="line">ts：时间戳，格式为“秒.毫秒”（bash中生成同款时间戳的命令为date +%s.%3N）</span><br><span class="line">visit<span class="emphasis">_scheme：访问者使用的协议</span></span><br><span class="line"><span class="emphasis">usg：访问者使用的UserAgent信息</span></span><br><span class="line"><span class="emphasis">colo：被访问的Cloudflare数据中心的所在位置，此处是由IANA定义的机场代码</span></span><br><span class="line"><span class="emphasis">sliver：请求是否被拆分成多个部分进行处理或传输</span></span><br><span class="line"><span class="emphasis">http：访问者使用的HTTP协议版本</span></span><br><span class="line"><span class="emphasis">loc：访问者的所在地（国家）</span></span><br><span class="line"><span class="emphasis">tls：访问者与服务器建立连接使用的TLS版本</span></span><br><span class="line"><span class="emphasis">sni：SNI加密或明文传输</span></span><br><span class="line"><span class="emphasis">warp：访问者是否使用了Warp服务</span></span><br><span class="line"><span class="emphasis">gateway：访问者是否使用了Cloudflare Gateway服务</span></span><br><span class="line"><span class="emphasis">rbi：访问者是否使用了Cloudflares Remote Browser Isolation(RBI)服务</span></span><br><span class="line"><span class="emphasis">kex：TLS密钥交换过程中使用的交换方式</span></span><br></pre></td></tr></table></figure>
 <p>参考<a target="_blank" rel="noopener" href="https://lxnchan.cn/cloudflare-trace.html">https://lxnchan.cn/cloudflare-trace.html</a></p>
+<h4 id="Cloudflare-WARP"><a href="#Cloudflare-WARP" class="headerlink" title="Cloudflare WARP"></a>Cloudflare WARP</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://gitlab.com/fscarmen/warp">f大的warp脚本</a><br>x-ui默认的xray配置在<a href="./xray-default.json">here</a></li>
+</ul>
 <h2 id="Proxy-Tools"><a href="#Proxy-Tools" class="headerlink" title="Proxy Tools"></a>Proxy Tools</h2><h3 id="Sing-Box"><a href="#Sing-Box" class="headerlink" title="Sing-Box"></a>Sing-Box</h3><ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/SagerNet/sing-box">sing-box</a></li>
 <li>订阅转换：<a target="_blank" rel="noopener" href="https://github.com/Toperlock/sing-box-subscribe/">sing-box-subscribe</a></li>
@@ -109,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/21/Proxy/README/" data-id="cm2iqc5nz0002qa510q0b1zu9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/10/25/Proxy/README/" data-id="cm2iqc5nz0002qa510q0b1zu9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -119,7 +122,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/10/24/Learning/go/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/10/25/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -129,7 +132,7 @@
     </a>
   
   
-    <a href="/2024/10/21/Photo%20backup/Photo%20backup/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/10/25/Proxy/xray-default/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
@@ -169,15 +172,19 @@
       <ul>
         
           <li>
-            <a href="/2024/10/24/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
+            <a href="/2024/10/25/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/25/Proxy/README/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/25/Proxy/xray-default/">(no title)</a>
           </li>
         
           <li>
             <a href="/2024/10/24/Learning/go/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2024/10/21/Proxy/README/">(no title)</a>
           </li>
         
           <li>
