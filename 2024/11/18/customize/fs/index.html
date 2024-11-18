@@ -6,15 +6,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="{&quot;api&quot;:{&quot;services&quot;:[&quot;HandlerService&quot;,&quot;LoggerService&quot;,&quot;StatsService&quot;],&quot;tag&quot;:&quot;api&quot;},&quot;inbounds&quot;:[{&quot;listen&quot;:&quot;127.0.0.1&quot;,&quot;port&quot;:62789,&quot;protocol&quot;:&quot;dokodemo-door&quot;,&quot;settings&quot;:{&quot;address&quot;:&quot;127.0.0.1&quot;},&quot;tag&quot;:&quot;ap">
+  <meta name="description" content="File SystemMount using cifs12sudo apt install cifs-utils sudo mount -t cifs -o uid&#x3D;***,username&#x3D;***,password&#x3D;***,iocharset&#x3D;utf8 &#x2F;&#x2F;nas&#x2F;folder &#x2F;mnt&#x2F;nas 当然也可以使用nfs Acknowledgements">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2024/11/11/Proxy/xray-default/index.html">
+<meta property="og:url" content="http://example.com/2024/11/18/customize/fs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="{&quot;api&quot;:{&quot;services&quot;:[&quot;HandlerService&quot;,&quot;LoggerService&quot;,&quot;StatsService&quot;],&quot;tag&quot;:&quot;api&quot;},&quot;inbounds&quot;:[{&quot;listen&quot;:&quot;127.0.0.1&quot;,&quot;port&quot;:62789,&quot;protocol&quot;:&quot;dokodemo-door&quot;,&quot;settings&quot;:{&quot;address&quot;:&quot;127.0.0.1&quot;},&quot;tag&quot;:&quot;ap">
+<meta property="og:description" content="File SystemMount using cifs12sudo apt install cifs-utils sudo mount -t cifs -o uid&#x3D;***,username&#x3D;***,password&#x3D;***,iocharset&#x3D;utf8 &#x2F;&#x2F;nas&#x2F;folder &#x2F;mnt&#x2F;nas 当然也可以使用nfs Acknowledgements">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-11T02:18:51.228Z">
-<meta property="article:modified_time" content="2024-11-11T02:18:51.228Z">
+<meta property="article:published_time" content="2024-11-18T09:39:31.177Z">
+<meta property="article:modified_time" content="2024-11-18T09:39:31.177Z">
 <meta property="article:author" content="FanBB2333">
 <meta name="twitter:card" content="summary">
   
@@ -71,10 +71,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Proxy/xray-default" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-customize/fs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/11/11/Proxy/xray-default/" class="article-date">
-  <time class="dt-published" datetime="2024-11-11T02:18:51.228Z" itemprop="datePublished">2024-11-11</time>
+    <a href="/2024/11/18/customize/fs/" class="article-date">
+  <time class="dt-published" datetime="2024-11-18T09:39:31.177Z" itemprop="datePublished">2024-11-18</time>
 </a>
     
   </div>
@@ -83,11 +83,13 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        {"api":{"services":["HandlerService","LoggerService","StatsService"],"tag":"api"},"inbounds":[{"listen":"127.0.0.1","port":62789,"protocol":"dokodemo-door","settings":{"address":"127.0.0.1"},"tag":"api"}],"outbounds":[{"protocol":"freedom","settings":{}},{"protocol":"blackhole","settings":{},"tag":"blocked"}],"policy":{"system":{"statsInboundDownlink":true,"statsInboundUplink":true}},"routing":{"rules":[{"inboundTag":["api"],"outboundTag":"api","type":"field"},{"ip":["geoip:private"],"outboundTag":"blocked","type":"field"},{"outboundTag":"blocked","protocol":["bittorrent"],"type":"field"}]},"stats":{}}
+        <h1 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h1><h2 id="Mount-using-cifs"><a href="#Mount-using-cifs" class="headerlink" title="Mount using cifs"></a>Mount using cifs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install cifs-utils </span><br><span class="line"><span class="built_in">sudo</span> mount -t cifs -o uid=***,username=***,password=***,iocharset=utf8 //nas/folder /mnt/nas</span><br></pre></td></tr></table></figure>
+<p>当然也可以使用nfs</p>
+<h2 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/11/11/Proxy/xray-default/" data-id="cm3cea8uh0001dzq54b3t0u52" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/11/18/customize/fs/" data-id="cm3mu3w2q0003j4qbdqrh97au" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -97,7 +99,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/11/11/Proxy/xray-config/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/11/18/Tailscale/derper/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -107,7 +109,7 @@
     </a>
   
   
-    <a href="/2024/11/11/customize/fs/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/11/18/customize/zsh/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
@@ -147,23 +149,23 @@
       <ul>
         
           <li>
-            <a href="/2024/11/11/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
+            <a href="/2024/11/18/Install%20xrdp%20in%20macOS/Install%20xrdp%20in%20macOS/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/11/11/Proxy/README/">(no title)</a>
+            <a href="/2024/11/18/Proxy/README/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/11/11/Proxy/xray-config/">(no title)</a>
+            <a href="/2024/11/18/Proxy/xray-config/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/11/11/Proxy/xray-default/">(no title)</a>
+            <a href="/2024/11/18/Proxy/xray-default/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/11/11/customize/fs/">(no title)</a>
+            <a href="/2024/11/18/Tailscale/derper/">(no title)</a>
           </li>
         
       </ul>
