@@ -7,3 +7,5 @@
 - [GPU & CUDA 粗浅理解](https://cyanscholar.com/posts/gpu%E7%B2%97%E6%B5%85%E7%90%86%E8%A7%A3/learngpu-1/)
 - [Aliyun-DCGM](https://help.aliyun.com/zh/ack/ack-managed-and-ack-dedicated/user-guide/introduction-to-metrics?spm=a2c6h.12873639.article-detail.5.666338126giHVR)
 - [NSight-systems userguide](https://docs.nvidia.com/nsight-systems/UserGuide/index.html#available-metrics)
+- [GitHub NVIDIA/dcgm-exporter](https://github.com/NVIDIA/dcgm-exporter)
+- [GitHub NVIDIA/DCGM](https://github.com/NVIDIA/DCGM)
