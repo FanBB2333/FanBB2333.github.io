@@ -1,5 +1,7 @@
-# Where is the WALL?
-
+---
+title: Outside
+type: post
+---
 
 ## Cloud Service Providers
 ### Oracle Cloud

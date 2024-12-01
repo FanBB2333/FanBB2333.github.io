@@ -1,4 +1,8 @@
 ---
 title: about
-date: 2024-12-01 15:47:18
+type: page
+layout: page
 ---
+
+# Hi there
+Welcome to the warm `L1ghted` home~
