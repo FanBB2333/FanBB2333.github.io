@@ -1,6 +1,9 @@
-# Install xrdp in macOS
-## Prerequisites
+---
+title: Install xrdp in macOS
+type: post
+---
 
+## Prerequisites
 
 ## Install
 ### Build
