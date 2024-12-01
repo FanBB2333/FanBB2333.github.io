@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Useful DERP | L1ghted Home</title><meta name="author" content="L1ght Ra1n"><meta name="copyright" content="L1ght Ra1n"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Install custom DERP on seversRun DERP server on a server1234567891011121314151617181920212223242526272829303132DERP_HOST&#x3D;derp.example.comSTUN_PORT&#x3D;12345DERP_PORT&#x3D;12346~&#x2F;go&#x2F;bin&#x2F;derper \    -c ~&#x2F;.derper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Useful DERP">
+<meta property="og:url" content="http://example.com/2024/12/01/Tailscale/derper/index.html">
+<meta property="og:site_name" content="L1ghted Home">
+<meta property="og:description" content="Install custom DERP on seversRun DERP server on a server1234567891011121314151617181920212223242526272829303132DERP_HOST&#x3D;derp.example.comSTUN_PORT&#x3D;12345DERP_PORT&#x3D;12346~&#x2F;go&#x2F;bin&#x2F;derper \    -c ~&#x2F;.derper">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/60598380?s=96&v=4">
+<meta property="article:published_time" content="2024-12-01T11:51:50.919Z">
+<meta property="article:modified_time" content="2024-12-01T11:51:50.919Z">
+<meta property="article:author" content="L1ght Ra1n">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/60598380?s=96&v=4"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/12/01/Tailscale/derper/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Useful DERP',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post type-post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">L1ghted Home</span></a><a class="nav-page-title" href="/"><span class="site-name">Useful DERP</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Useful DERP</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-12-01T11:51:50.919Z" title="Created 2024-12-01 11:51:50">2024-12-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-12-01T11:51:50.919Z" title="Updated 2024-12-01 11:51:50">2024-12-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Install-custom-DERP-on-severs"><a href="#Install-custom-DERP-on-severs" class="headerlink" title="Install custom DERP on severs"></a>Install custom DERP on severs</h1><h2 id="Run-DERP-server-on-a-server"><a href="#Run-DERP-server-on-a-server" class="headerlink" title="Run DERP server on a server"></a>Run DERP server on a server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">DERP_HOST=derp.example.com</span><br><span class="line">STUN_PORT=12345</span><br><span class="line">DERP_PORT=12346</span><br><span class="line"></span><br><span class="line">~/go/bin/derper \</span><br><span class="line">    -c ~/.derper.key \</span><br><span class="line">    -a :<span class="variable">$&#123;DERP_PORT&#125;</span> -http-port -1 \</span><br><span class="line">    -stun-port <span class="variable">$&#123;STUN_PORT&#125;</span> \</span><br><span class="line">    -hostname <span class="variable">$&#123;DERP_HOST&#125;</span> \</span><br><span class="line">    --certmode manual \</span><br><span class="line">    -certdir ~/.acme.sh/<span class="variable">$&#123;DERP_HOST&#125;</span> \</span><br><span class="line">    --verify-clients</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;[Unit]</span></span><br><span class="line"><span class="string">Description=Tailscale derp service</span></span><br><span class="line"><span class="string">After=network.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">ExecStart=/<span class="variable">$&#123;USER&#125;</span>/go/bin/derper \</span></span><br><span class="line"><span class="string">    -c /<span class="variable">$&#123;USER&#125;</span>/.derper.key \</span></span><br><span class="line"><span class="string">    -a :<span class="variable">$&#123;DERP_PORT&#125;</span> -http-port -1 \</span></span><br><span class="line"><span class="string">    -stun-port <span class="variable">$&#123;STUN_PORT&#125;</span> \</span></span><br><span class="line"><span class="string">    -hostname <span class="variable">$&#123;DERP_HOST&#125;</span> \</span></span><br><span class="line"><span class="string">    --certmode manual \</span></span><br><span class="line"><span class="string">    -certdir ~/.acme.sh/<span class="variable">$&#123;DERP_HOST&#125;</span> \</span></span><br><span class="line"><span class="string">    --verify-clients</span></span><br><span class="line"><span class="string">Restart=always</span></span><br><span class="line"><span class="string">User=<span class="variable">$&#123;USER&#125;</span></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=multi-user.target&quot;</span> \</span><br><span class="line">	| <span class="built_in">sudo</span> <span class="built_in">tee</span> /etc/systemd/system/derp.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://tailscale.com/kb/1118/custom-derp-servers">https://tailscale.com/kb/1118/custom-derp-servers</a></li>
+<li><a target="_blank" rel="noopener" href="https://kiprey.github.io/2023/11/tailscale-derp/">https://kiprey.github.io/2023/11/tailscale-derp/</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.angustar.com/archives/Tailscale-DERP.html">https://blog.angustar.com/archives/Tailscale-DERP.html</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">L1ght Ra1n</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/12/01/Tailscale/derper/">http://example.com/2024/12/01/Tailscale/derper/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://avatars.githubusercontent.com/u/60598380?s=96&amp;v=4" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/12/01/Proxy/README/" title="Outside"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Outside</div></div><div class="info-2"><div class="info-item-1">Cloud Service ProvidersOracle CloudCloudflareDNS可以让CF协助托管域名，挂CF的CDN CF Workers 什么是ProxyIP：是用于workers转发CF托管网站的服务器IP，用于workers访问CF系网站，参考这里 什么是CF反代IP：理解为非官方的CF节点，或许可以理解为用户请求经过CF CDN的落地IP？参考这里  Cloudflare Trace API通过访问https://xxx/cdn-cgi/trace可以查看当前访问的CF节点IP例如访问https://nodeseek.com/cdn-cgi/trace, https://www.cloudflare.com/cdn-cgi/trace 12345678910111213141516fl：Cloudflare 服务器实例h：网站域名ip：当前访问者的IP地址ts：时间戳，格式为“秒.毫秒”（bash中生成同款时间戳的命令为date...</div></div></div></a><a class="pagination-related" href="/2024/12/01/customize/fs/" title="File System configuration"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">File System configuration</div></div><div class="info-2"><div class="info-item-1">Mount using cifs12sudo apt install cifs-utils sudo mount -t cifs -o uid=***,username=***,password=***,iocharset=utf8 //nas/folder /mnt/nas 当然也可以使用nfs Acknowledgements</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/60598380?s=96&amp;v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">L1ght Ra1n</div><div class="author-info-description">Welcome Home~</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/FanBB2333"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/FanBB2333" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Install-custom-DERP-on-severs"><span class="toc-number">1.</span> <span class="toc-text">Install custom DERP on severs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Run-DERP-server-on-a-server"><span class="toc-number">1.1.</span> <span class="toc-text">Run DERP server on a server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Acknowledgements"><span class="toc-number">1.2.</span> <span class="toc-text">Acknowledgements</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/01/Learning/go/" title="Learn to Use `Golang`">Learn to Use `Golang`</a><time datetime="2024-12-01T11:51:50.919Z" title="Created 2024-12-01 11:51:50">2024-12-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/01/Learning/nvidia/" title="Inspect into NVIDIA">Inspect into NVIDIA</a><time datetime="2024-12-01T11:51:50.919Z" title="Created 2024-12-01 11:51:50">2024-12-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/01/Photo%20backup/Photo%20backup/" title="Automatically backup photos">Automatically backup photos</a><time datetime="2024-12-01T11:51:50.919Z" title="Created 2024-12-01 11:51:50">2024-12-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/01/Proxy/README/" title="Outside">Outside</a><time datetime="2024-12-01T11:51:50.919Z" title="Created 2024-12-01 11:51:50">2024-12-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/01/Tailscale/derper/" title="Useful DERP">Useful DERP</a><time datetime="2024-12-01T11:51:50.919Z" title="Created 2024-12-01 11:51:50">2024-12-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By L1ght Ra1n</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
