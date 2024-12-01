@@ -1,5 +1,9 @@
-# Install custom DERP on severs
+---
+title: Useful DERP
+type: post
+---
 
+# Install custom DERP on severs
 
 ## Run DERP server on a server
 ```bash

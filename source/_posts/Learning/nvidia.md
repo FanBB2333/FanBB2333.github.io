@@ -1,3 +1,8 @@
+---
+title: Inspect into NVIDIA
+type: post
+---
+
 # Inspect into NVIDIA
 
 ## 如何监控真实的GPU Util

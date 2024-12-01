@@ -1,3 +1,9 @@
+---
+title: How About zsh?
+# date: 2024-12-01 00:00:00
+type: post
+---
+
 ## Beautify my terminal with Zsh
 
 ### Plugins

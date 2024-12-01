@@ -1,4 +1,8 @@
-# File System
+---
+title: File System configuration
+type: post
+---
+
 ## Mount using cifs
 ```bash
 sudo apt install cifs-utils 

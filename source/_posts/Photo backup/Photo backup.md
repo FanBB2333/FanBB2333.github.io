@@ -1,2 +1,4 @@
-# Automatically backup photos
-
+---
+title: Automatically backup photos
+type: post
+---
