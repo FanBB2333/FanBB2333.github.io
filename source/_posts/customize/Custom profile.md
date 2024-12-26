@@ -10,6 +10,20 @@ sudo mount -t cifs -o uid=***,username=***,password=***,iocharset=utf8 //nas/fol
 ```
 当然也可以使用nfs
 
+## Mount NTFS in Ubuntu
+```bash
+sudo apt install nfs-kernel-server fuse
+sudo blkid | grep ntfs
+sudo mkdir /mnt/mydrive
+mount -t ntfs /dev/sdg1 /mnt/mydrive
+sudo nano /etc/fstab
+/dev/sdg1  /mnt/mydrive   ext4   defaults   0   0
+Ctrl+x  按Y保存并关闭文件。
+sudo umount /mnt/mydrive
+# 原文链接：https://blog.csdn.net/zsgcsdn/article/details/136734078
+```
+
+
 ## Acknowledgements
 
 # How About zsh?
