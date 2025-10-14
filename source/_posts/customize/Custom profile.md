@@ -14,13 +14,16 @@ sudo mount -t cifs -o uid=***,username=***,password=***,iocharset=utf8 //nas/fol
 ```bash
 sudo apt install nfs-kernel-server fuse
 sudo blkid | grep ntfs
-sudo mkdir /mnt/mydrive
-mount -t ntfs /dev/sdg1 /mnt/mydrive
+sudo mkdir /mnt/8t
+sudo mount -t ntfs-3g /dev/sda1 /mnt/8t/sda1
+sudo mount -t ntfs-3g /dev/sda2 /mnt/8t/sda2
 sudo nano /etc/fstab
-/dev/sdg1  /mnt/mydrive   ext4   defaults   0   0
-Ctrl+x  按Y保存并关闭文件。
-sudo umount /mnt/mydrive
-# 原文链接：https://blog.csdn.net/zsgcsdn/article/details/136734078
+
+UUID=2E2EC83F580E31B4 /mnt/8t/sda1 ntfs-3g defaults,nofail 0 0
+UUID=FC28DE4526ACCAE3 /mnt/8t/sda2 ntfs-3g defaults,nofail 0 0
+
+sudo umount /mnt/8t/sda1
+sudo umount /mnt/8t/sda2
 ```
 
 
