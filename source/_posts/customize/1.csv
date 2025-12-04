@@ -1,0 +1,46 @@
+task,metric,specialist,score,full_score,url,data_source
+Cinematic Picture Modulation,Rouge-L f,VPG-C,0.3052,1.0,https://github.com/DCDmllm/Cheetah,IEdit
+Clothing Combinations and Classification,Accuracy,MLoEM,0.6833,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,Fashion200K
+Fashion Item Identification,Accuracy,MLoEM,0.6995,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,Fashion200K
+IoT-Driven Question Answering,Accuracy,MLoEM,0.7131,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,WebQA
+Web-Scale Multimodal Reasoning,Accuracy,MLoEM,0.7052,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,WebQA
+Story Completion,Rouge-L f,LLaVA-NeXT-Interleave,0.3196,1.0,https://github.com/LLaVA-VL/LLaVA-NeXT,AESOP
+Image Alteration Detection,Rouge-L f,MLoEM,0.3555,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,Spot-the-Diff
+Story Coherence Analysis,Rouge-L f,LLaVA-NeXT-Interleave,0.4458,1.0,https://github.com/LLaVA-VL/LLaVA-NeXT,PororoSV
+Goal Oriented Decision Making,Rouge-L f,VPG-C,0.7194,1.0,https://github.com/DCDmllm/Cheetah,ALFRED
+Past Informed Action Planning,Rouge-L f,VPG-C,0.7169,1.0,https://github.com/DCDmllm/Cheetah,ALFRED
+Smart Agent Decision Analysis,Rouge-L f,MLoEM,0.734,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,ALFRED
+Environment Based Action Determination,Rouge-L f,LLaVA-NeXT-Interleave,0.731,1.0,https://github.com/LLaVA-VL/LLaVA-NeXT,ALFRED
+Goal Driven Action Planning,Rouge-L f,VPG-C,0.7156,1.0,https://github.com/DCDmllm/Cheetah,ALFRED
+Tale Extension,Rouge-L f,MLoEM,0.6027,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,FlintstonesSV
+Image Alteration Comparison,Rouge-L f,MLoEM,0.5581,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,CLEVR-Change
+Sporting Info Analysis,Rouge-L f,LLaVA-NeXT-Interleave,0.883,1.0,https://github.com/LLaVA-VL/LLaVA-NeXT,MMCoQA
+Financial Dialogue Understanding,Rouge-L f,VPG-C,0.8691,1.0,https://github.com/DCDmllm/Cheetah,MMCoQA
+Relevant Data QA,Rouge-L f,VPG-C,0.864,1.0,https://github.com/DCDmllm/Cheetah,MMCoQA
+Multi-Turn QA,Rouge-L f,MLoEM,0.8781,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,MMCoQA
+Integrated Question Resolution,Rouge-L f,Mantis,0.8711,1.0,https://tiger-ai-lab.github.io/Mantis/,MMCoQA
+Slide Question Response,Accuracy,Mantis,0.8161,1.0,https://tiger-ai-lab.github.io/Mantis/,SlideVQA
+Image Relation Evaluation,Accuracy,MLoEM,1.0171,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,NLVR2
+Chronological Visual Narratives,Rouge-L f,VPG-C,0.2895,1.0,https://github.com/DCDmllm/Cheetah,VIST
+Comparing Bird Variations,Rouge-L f,VPG-C,0.3841,1.0,https://github.com/DCDmllm/Cheetah,Birds-to-Words
+Animal Description Generation,Rouge-L f,LLaVA-NeXT-Interleave,0.3847,1.0,https://github.com/LLaVA-VL/LLaVA-NeXT,Birds-to-Words
+Image-Based Story Completion,Rouge-L f,VPG-C,0.3656,1.0,https://github.com/DCDmllm/Cheetah,DiDeMoSV
+Recipe Image Completion,Accuracy,LLaVA-NeXT-Interleave,0.6002,1.0,https://github.com/LLaVA-VL/LLaVA-NeXT,RecipeQA_VisualCloze
+Ingredient Identification,Accuracy,Mantis,0.5982,1.0,https://tiger-ai-lab.github.io/Mantis/,RecipeQA_VisualCloze
+Picture Question Answering,Accuracy,MLoEM,0.8801,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,DocVQA
+Doc Info Extraction,Accuracy,Mantis,0.8878,1.0,https://tiger-ai-lab.github.io/Mantis/,DocVQA
+Recipe Image Inconsistency Detection,Accuracy,MLoEM,0.6951,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,RecipeQA_ImageCoherence
+Workpiece Similarity,Accuracy,MLoEM,0.8321,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,VISION
+Image Similarity Classification,Accuracy,MLoEM,0.8062,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,MIT-States_PropertyCoherence
+Recipe Summary Completion Task,Accuracy,VPG-C,0.9458,1.0,https://github.com/DCDmllm/Cheetah,RecipeQA_TextCloze
+Comic Panel Sequencer,Accuracy,VPG-C,0.5438,1.0,https://github.com/DCDmllm/Cheetah,COMICS_Panel
+Blind-Driven Visual QA,Accuracy,VPG-C,0.6622,1.0,https://github.com/DCDmllm/Cheetah,VizWiz
+Dual Task Visual QA,Accuracy,MLoEM,0.6761,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,VizWiz
+Comic Dialogue Completion,Accuracy,Mantis,0.7134,1.0,https://tiger-ai-lab.github.io/Mantis/,COMICS_Dialogue
+Textbook Diagram Analysis,Accuracy,MLoEM,0.9897,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,TQA
+Educational Comprehension,Accuracy,MLoEM,0.9976,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,TQA
+Street View QA,Accuracy,VPG-C,0.7756,1.0,https://github.com/DCDmllm/Cheetah,nuscenes
+Book Information Extraction,Accuracy,VPG-C,0.9159,1.0,https://github.com/DCDmllm/Cheetah,OCR-VQA
+Textual Document QA,Accuracy,VPG-C,0.9309,1.0,https://github.com/DCDmllm/Cheetah,OCR-VQA
+Object State Classification,Accuracy,MLoEM,0.5682,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,MIT-States_StateCoherence
+Text-Table-Image Joint Reasoning,Accuracy,MLoEM,0.7996,1.0,https://dl.acm.org/doi/10.1145/3664647.3688995,MultiModalQA

@@ -256,7 +256,7 @@ noticeOutdate:
 footer:
   owner:
     enable: true
-    since: 2019
+    since: 2024
   custom_text:
   # Copyright of theme and framework
   copyright: true
@@ -287,7 +287,7 @@ aside:
       link: https://github.com/FanBB2333
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: Welcome to L1ghted Home!
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -465,8 +465,8 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  placeholder: 搜索文章...
 
   # Algolia Search
   algolia_search:
