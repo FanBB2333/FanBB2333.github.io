@@ -16,12 +16,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Cache node modules
         uses: actions/cache@v4
@@ -37,17 +37,26 @@ jobs:
       - name: Install Hexo
         run: npm install -g hexo-cli
 
-
       - name: Generate Static Files
         run: hexo generate
 
-      # - name: Deploy to GitHub Pages
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     npx hexo deploy
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout Sudoku Code
+        uses: actions/checkout@v4
+        with:
+          repository: FanBB2333/G-thesis
+          path: sudoku-source
+          sparse-checkout: temp4/web
+
+      - name: Build Sudoku Project
+        working-directory: sudoku-source/temp4/web
+        run: |
+          npm install
+          npm run build
+
+      - name: Move Sudoku to Public
+        run: |
+          mkdir -p public/sudoku
+          cp -r sudoku-source/temp4/web/out/* public/sudoku/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
