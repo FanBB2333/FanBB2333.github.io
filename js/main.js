@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isPrismjs = plugin === 'prismjs'
     const highlightShrinkClass = isHighlightShrink === true ? 'closed' : ''
     const highlightShrinkEle = isHighlightShrink !== undefined ? '<i class="fas fa-angle-down expand"></i>' : ''
-    const highlightCopyEle = highlightCopy ? '<i class="fas fa-paste copy-button"></i>' : ''
+    const highlightCopyEle = highlightCopy ? '<div class="copy-notice"></div><i class="fas fa-paste copy-button"></i>' : ''
     const highlightMacStyleEle = '<div class="macStyle"><div class="mac-close"></div><div class="mac-minimize"></div><div class="mac-maximize"></div></div>'
     const highlightFullpageEle = highlightFullpage ? '<i class="fa-solid fa-up-right-and-down-left-from-center fullpage-button"></i>' : ''
 
@@ -76,41 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (GLOBAL_CONFIG.Snackbar !== undefined) {
         btf.snackbarShow(text)
       } else {
-        const newEle = document.createElement('div')
-        newEle.className = 'copy-notice'
-        newEle.textContent = text
-        document.body.appendChild(newEle)
-
-        const buttonRect = ele.getBoundingClientRect()
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
-        const finalTop = buttonRect.top + scrollTop - 40
-        const finalLeft = buttonRect.left + scrollLeft + buttonRect.width / 2
-
-        const topValue = ele.closest('figure.highlight').classList.contains('code-fullpage') ? finalTop + 60 : finalTop
-
-        newEle.style.cssText = `
-      top: ${topValue + 10}px;
-      left: ${finalLeft}px;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s ease, top 0.3s ease;
-    `
-
-        requestAnimationFrame(() => {
-          newEle.style.opacity = '1'
-          newEle.style.top = `${topValue}px`
-        })
-
-        setTimeout(() => {
-          newEle.style.opacity = '0'
-          newEle.style.top = `${topValue + 10}px`
-          setTimeout(() => {
-            newEle?.remove()
-          }, 300)
-        }, 800)
+        ele.textContent = text
+        ele.style.opacity = 1
+        setTimeout(() => { ele.style.opacity = 0 }, 800)
       }
     }
+
     const copy = async (text, ctx) => {
       try {
         await navigator.clipboard.writeText(text)
@@ -128,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const preCodeSelector = isPrismjs ? 'pre code' : 'table .code pre'
       const codeElement = $buttonParent.querySelector(preCodeSelector)
       if (!codeElement) return
-      copy(codeElement.innerText, clickEle)
+      copy(codeElement.innerText, clickEle.previousElementSibling)
       $buttonParent.classList.remove('copy-true')
     }
 
@@ -253,23 +224,14 @@ document.addEventListener('DOMContentLoaded', () => {
    */
 
   const fetchUrl = async url => {
-    try {
-      const response = await fetch(url)
-      return await response.json()
-    } catch (error) {
-      console.error('Failed to fetch URL:', error)
-      return []
-    }
+    const response = await fetch(url)
+    return await response.json()
   }
 
-  const runJustifiedGallery = (container, data, config) => {
-    const { isButton, limit, firstLimit, tabs } = config
-
+  const runJustifiedGallery = (item, data, isButton = false, tabs) => {
     const dataLength = data.length
-    const maxGroupKey = Math.ceil((dataLength - firstLimit) / limit + 1)
 
-    // Gallery configuration
-    const igConfig = {
+    const ig = new InfiniteGrid.JustifiedInfiniteGrid(item, {
       gap: 5,
       isConstantSize: true,
       sizeRange: [150, 600],
@@ -277,130 +239,132 @@ document.addEventListener('DOMContentLoaded', () => {
       // observeChildren: true,
       useTransform: true
       // useRecycle: false
+    })
+
+    const replaceDq = str => str.replace(/"/g, '&quot;') // replace double quotes to &quot;
+
+    const getItems = (nextGroupKey, count) => {
+      const nextItems = []
+      const startCount = (nextGroupKey - 1) * count
+
+      for (let i = 0; i < count; ++i) {
+        const num = startCount + i
+        if (num >= dataLength) {
+          break
+        }
+
+        const item = data[num]
+        const alt = item.alt ? `alt="${replaceDq(item.alt)}"` : ''
+        const title = item.title ? `title="${replaceDq(item.title)}"` : ''
+
+        nextItems.push(`<div class="item">
+            <img src="${item.url}" data-grid-maintained-target="true" ${alt + title} />
+          </div>`)
+      }
+      return nextItems
     }
 
-    const ig = new InfiniteGrid.JustifiedInfiniteGrid(container, igConfig)
-    let isLayoutHidden = false
-
-    // Utility functions
-    const sanitizeString = str => (str && str.replace(/"/g, '&quot;')) || ''
-
-    const createImageItem = item => {
-      const alt = item.alt ? `alt="${sanitizeString(item.alt)}"` : ''
-      const title = item.title ? `title="${sanitizeString(item.title)}"` : ''
-      return `<div class="item">
-        <img src="${item.url}" data-grid-maintained-target="true" ${alt} ${title} />
-      </div>`
-    }
-
-    const getItems = (nextGroupKey, count, isFirst = false) => {
-      const startIndex = isFirst ? (nextGroupKey - 1) * count : (nextGroupKey - 2) * count + firstLimit
-      return data.slice(startIndex, startIndex + count).map(createImageItem)
-    }
-
-    // Load more button
-    const addLoadMoreButton = container => {
+    const buttonText = GLOBAL_CONFIG.infinitegrid.buttonText
+    const addButton = item => {
       const button = document.createElement('button')
-      button.innerHTML = `${GLOBAL_CONFIG.infinitegrid.buttonText}<i class="fa-solid fa-arrow-down"></i>`
+      button.innerHTML = buttonText + '<i class="fa-solid fa-arrow-down"></i>'
 
-      button.addEventListener('click', () => {
-        button.remove()
-        btf.setLoading.add(container)
-        appendItems(ig.getGroups().length + 1, limit)
+      button.addEventListener('click', e => {
+        e.target.closest('button').remove()
+        btf.setLoading.add(item)
+        appendItem(ig.getGroups().length + 1, 10)
       }, { once: true })
 
-      container.insertAdjacentElement('afterend', button)
+      item.insertAdjacentElement('afterend', button)
     }
 
-    const appendItems = (nextGroupKey, count, isFirst) => {
-      ig.append(getItems(nextGroupKey, count, isFirst), nextGroupKey)
+    const appendItem = (nextGroupKey, count) => {
+      ig.append(getItems(nextGroupKey, count), nextGroupKey)
     }
 
-    // Event handlers
-    const handleRenderComplete = e => {
+    const maxGroupKey = Math.ceil(dataLength / 10)
+    let isLayoutHidden = false
+
+    const completeFn = e => {
       if (tabs) {
-        const parentNode = container.parentNode
+        const parentNode = item.parentNode
+
         if (isLayoutHidden) {
           parentNode.style.visibility = 'visible'
         }
-        if (container.offsetHeight === 0) {
+
+        if (item.offsetHeight === 0) {
           parentNode.style.visibility = 'hidden'
           isLayoutHidden = true
         }
       }
 
       const { updated, isResize, mounted } = e
-      if (!updated.length || !mounted.length || isResize) return
+      if (!updated.length || !mounted.length || isResize) {
+        return
+      }
 
-      btf.loadLightbox(container.querySelectorAll('img:not(.medium-zoom-image)'))
+      btf.loadLightbox(item.querySelectorAll('img:not(.medium-zoom-image)'))
 
       if (ig.getGroups().length === maxGroupKey) {
-        btf.setLoading.remove(container)
-        !tabs && ig.off('renderComplete', handleRenderComplete)
+        btf.setLoading.remove(item)
+        !tabs && ig.off('renderComplete', completeFn)
         return
       }
 
       if (isButton) {
-        btf.setLoading.remove(container)
-        addLoadMoreButton(container)
+        btf.setLoading.remove(item)
+        addButton(item)
       }
     }
 
-    const handleRequestAppend = btf.debounce(e => {
+    const requestAppendFn = btf.debounce(e => {
       const nextGroupKey = (+e.groupKey || 0) + 1
+      appendItem(nextGroupKey, 10)
 
-      if (nextGroupKey === 1) appendItems(nextGroupKey, firstLimit, true)
-      else appendItems(nextGroupKey, limit)
-
-      if (nextGroupKey === maxGroupKey) ig.off('requestAppend', handleRequestAppend)
+      if (nextGroupKey === maxGroupKey) {
+        ig.off('requestAppend', requestAppendFn)
+      }
     }, 300)
 
-    btf.setLoading.add(container)
-    ig.on('renderComplete', handleRenderComplete)
+    btf.setLoading.add(item)
+    ig.on('renderComplete', completeFn)
 
     if (isButton) {
-      appendItems(1, firstLimit, true)
+      appendItem(1, 10)
     } else {
-      ig.on('requestAppend', handleRequestAppend)
+      ig.on('requestAppend', requestAppendFn)
       ig.renderItems()
     }
 
-    btf.addGlobalFn('pjaxSendOnce', () => ig.destroy())
+    btf.addGlobalFn('pjaxSendOnce', () => { ig.destroy() })
   }
 
-  const addJustifiedGallery = async (elements, tabs = false) => {
-    if (!elements.length) return
+  const addJustifiedGallery = async (ele, tabs = false) => {
+    if (!ele.length) return
+    const init = async () => {
+      for (const item of ele) {
+        if (btf.isHidden(item) || item.classList.contains('loaded')) continue
 
-    const initGallery = async () => {
-      for (const element of elements) {
-        if (btf.isHidden(element) || element.classList.contains('loaded')) continue
-
-        const config = {
-          isButton: element.getAttribute('data-button') === 'true',
-          limit: parseInt(element.getAttribute('data-limit'), 10),
-          firstLimit: parseInt(element.getAttribute('data-first'), 10),
-          tabs
-        }
-
-        const container = element.firstElementChild
-        const content = container.textContent
-        container.textContent = ''
-        element.classList.add('loaded')
-
+        const isButton = item.getAttribute('data-button') === 'true'
+        const children = item.firstElementChild
+        const text = children.textContent
+        children.textContent = ''
+        item.classList.add('loaded')
         try {
-          const data = element.getAttribute('data-type') === 'url' ? await fetchUrl(content) : JSON.parse(content)
-          runJustifiedGallery(container, data, config)
-        } catch (error) {
-          console.error('Gallery data parsing failed:', error)
+          const content = item.getAttribute('data-type') === 'url' ? await fetchUrl(text) : JSON.parse(text)
+          runJustifiedGallery(children, content, isButton, tabs)
+        } catch (e) {
+          console.error('Gallery data parsing failed:', e)
         }
       }
     }
 
     if (typeof InfiniteGrid === 'function') {
-      await initGallery()
+      init()
     } else {
-      await btf.getScript(GLOBAL_CONFIG.infinitegrid.js)
-      await initGallery()
+      await btf.getScript(`${GLOBAL_CONFIG.infinitegrid.js}`)
+      init()
     }
   }
 
@@ -727,7 +691,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const addCopyright = () => {
     const { limitCount, languages } = GLOBAL_CONFIG.copyright
 
-    const handleCopy = e => {
+    const handleCopy = (e) => {
       e.preventDefault()
       const copyFont = window.getSelection(0).toString()
       let textFont = copyFont
@@ -900,7 +864,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuMask && menuMask.addEventListener('click', () => { sidebarFn.close() })
 
     clickFnOfSubMenu()
-    GLOBAL_CONFIG.islazyloadPlugin && lazyloadImg()
+    GLOBAL_CONFIG.islazyload && lazyloadImg()
     GLOBAL_CONFIG.copyright !== undefined && addCopyright()
 
     if (GLOBAL_CONFIG.autoDarkmode) {
@@ -926,7 +890,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAdjust()
     justifiedIndexPostUI()
 
-    if (GLOBAL_CONFIG_SITE.pageType === 'post') {
+    if (GLOBAL_CONFIG_SITE.isPost) {
       addPostOutdateNotice()
       GLOBAL_CONFIG.relativeDate.post && relativeDate(document.querySelectorAll('#post-meta time'))
     } else {
@@ -936,11 +900,11 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleCardCategory()
     }
 
-    GLOBAL_CONFIG_SITE.pageType === 'home' && scrollDownInIndex()
+    GLOBAL_CONFIG_SITE.isHome && scrollDownInIndex()
     scrollFn()
 
     forPostFn()
-    GLOBAL_CONFIG_SITE.pageType !== 'shuoshuo' && btf.switchComments(document)
+    !GLOBAL_CONFIG_SITE.isShuoshuo && btf.switchComments(document)
     openMobileMenu()
   }
 
