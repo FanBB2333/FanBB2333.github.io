@@ -1,6 +1,7 @@
 ---
 title: Useful DERP
 type: post
+description: 自建 Tailscale DERP 中继服务器的完整配置，包括 derper 启动命令和 systemd 服务配置。
 ---
 
 # Install custom DERP on severs

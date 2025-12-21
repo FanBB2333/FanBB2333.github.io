@@ -1,6 +1,7 @@
 ---
 title: About `xray` config file
 type: post
+description: Xray 配置文件结构解析与流媒体解锁相关参考资料。
 ---
 
 ## Config file structure

@@ -1,6 +1,7 @@
 ---
 title: Install xrdp in macOS
 type: post
+description: 在 macOS 上编译安装 xrdp 的踩坑记录，包括解决 implicit declaration 编译错误和 xorgxrdp 构建问题。
 ---
 
 ## Prerequisites

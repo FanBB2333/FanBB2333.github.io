@@ -1,6 +1,7 @@
 ---
 title: Inspect into NVIDIA
 type: post
+description: 深入了解 NVIDIA GPU 监控指标，探讨 GPU Utilization 的真实含义及 DCGM、NSight 等监控工具。
 ---
 
 # Inspect into NVIDIA

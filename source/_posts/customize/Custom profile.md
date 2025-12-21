@@ -1,6 +1,7 @@
 ---
 title: Custom profile
 type: post
+description: Linux 系统配置笔记，包括 CIFS/NFS/NTFS 挂载、Zsh 美化、Docker 代理设置等常用配置。
 ---
 # File System configuration
 ## Mount using cifs
