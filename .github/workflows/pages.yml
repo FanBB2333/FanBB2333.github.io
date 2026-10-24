@@ -1,67 +1,50 @@
-name: Hexo Deploy to Github Pages
+name: Deploy homepage to GitHub Pages
 
 on:
   push:
     branches:
       - main
+  schedule:
+    # Daily refresh of versions, "updated" dates and the fallback star counts.
+    - cron: '20 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-      contents: write
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Install Hexo
-        run: npm install -g hexo-cli
-
-      - name: Generate Static Files
-        run: hexo generate
-
-      - name: Checkout Sudoku Code
-        uses: actions/checkout@v4
-        with:
-          repository: FanBB2333/G-thesis
-          token: ${{ secrets.GH_PAT }}
-          path: sudoku-source
-          sparse-checkout: temp4/web
-
-      - name: Build Sudoku Project
-        working-directory: sudoku-source/temp4/web
+      - name: Build page
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm install
-          npm run build
+          mkdir -p _site
+          cp -R assets _site/
+          python3 build.py --fetch --out _site
 
-      - name: Move Sudoku to Public
-        run: |
-          mkdir -p public/sudoku
-          cp -r sudoku-source/temp4/web/out/* public/sudoku/
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages  # default: gh-pages
-          publish_dir: ./public
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

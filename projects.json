@@ -1,0 +1,292 @@
+{
+  "owner": "FanBB2333",
+  "site_url": "https://fanbb2333.github.io/",
+  "description": "Open-source tools by L1ght: GPU monitoring and sharing, remote development and coding-agent tools, desktop apps, LaTeX helpers, hardware and campus utilities.",
+  "lead": "These are the open-source tools I have built and released: for GPU servers, remote development and coding agents, desktop configs, LaTeX, odd hardware and campus life. Each one comes with a way to install or open it. Research prototypes stay off this page.",
+  "sections": [
+    {
+      "id": "gpu",
+      "title": "GPU & compute",
+      "small": "monitor, share, fake",
+      "accent": "blue",
+      "intro": "Tools that came out of running shared GPU servers: see what is busy, split a card fairly, and develop CUDA code on a machine with no GPU at all.",
+      "projects": [
+        {
+          "repo": "nvidb",
+          "featured": true,
+          "pypi": "nvidb",
+          "pitch": "See the GPUs on all your SSH servers in one terminal view, and queue jobs onto whichever has room.",
+          "install": {
+            "cmd": "pip install nvidb"
+          },
+          "platform": "Linux"
+        },
+        {
+          "repo": "FakeGPU",
+          "featured": true,
+          "pitch": "Run CUDA-facing code and plan GPU memory without a real GPU: fake devices for PyTorch, NVML and NCCL calls, plus memory estimators for LLM training and serving.",
+          "install": {
+            "label": "Linux wheel on Releases",
+            "url": "https://github.com/FanBB2333/FakeGPU/releases/latest"
+          },
+          "platform": "Linux and macOS"
+        },
+        {
+          "repo": "nVertake",
+          "pypi": "nvertake",
+          "pitch": "Split one NVIDIA GPU's SMs and memory between jobs, give one of them priority, and rebalance while they run.",
+          "install": {
+            "cmd": "pip install nvertake"
+          },
+          "platform": "Linux and WSL"
+        },
+        {
+          "repo": "metop",
+          "pypi": "metop",
+          "pitch": "An nvtop-style terminal monitor for the GPU and Neural Engine on Apple Silicon Macs.",
+          "install": {
+            "cmd": "pip install metop"
+          },
+          "platform": "macOS"
+        }
+      ]
+    },
+    {
+      "id": "dev",
+      "title": "Remote dev & agents",
+      "small": "wherever the code lives",
+      "accent": "green",
+      "intro": "For working on remote machines and alongside coding agents: providers, skills, shells and files, without setting up the server first.",
+      "projects": [
+        {
+          "repo": "ccs-panel",
+          "featured": true,
+          "pitch": "A desktop panel for switching Claude Code providers on remote SSH servers, compatible with cc-switch.",
+          "install": {
+            "label": "Download for macOS, Windows or Linux",
+            "url": "https://github.com/FanBB2333/ccs-panel/releases/latest"
+          },
+          "platform": "macOS, Windows and Linux"
+        },
+        {
+          "repo": "skim",
+          "releases": false,
+          "pitch": "Keep the skills of Claude Code, Codex, Gemini and other coding agents in one store, and switch whole skill sets at once.",
+          "install": {
+            "cmd": "go install github.com/FanBB2333/skim/cmd/skim@latest"
+          },
+          "platform": "any",
+          "language": "Go"
+        },
+        {
+          "repo": "ptyrelay",
+          "releases": false,
+          "pitch": "Turn a shell you already have (tmux, a web terminal, docker exec, ssh -T) into file and command tools for an agent, with an MCP server.",
+          "install": {
+            "cmd": "go install github.com/FanBB2333/ptyrelay/cmd/ptyrelay@latest"
+          },
+          "platform": "any"
+        },
+        {
+          "repo": "code-local",
+          "releases": false,
+          "pitch": "Mount a remote code-server workspace as a local folder over NFS or WebDAV, with only its URL and password: no SSH needed.",
+          "install": {
+            "cmd": "go install github.com/FanBB2333/code-local/cmd/code-local@latest"
+          },
+          "platform": "macOS and Linux"
+        },
+        {
+          "repo": "AnyMachine",
+          "releases": false,
+          "language": "Go",
+          "pitch": "Run Linux VMs on a Mac with different CPU, memory, network and browser setups, and audit the device details each guest can see.",
+          "platform": "macOS"
+        }
+      ]
+    },
+    {
+      "id": "desktop",
+      "title": "Network & cloud",
+      "small": "no more hand-edited configs",
+      "accent": "amber",
+      "intro": "Desktop apps that replace hand-edited config files and clunky web consoles.",
+      "projects": [
+        {
+          "repo": "SurgeKit",
+          "releases": false,
+          "pitch": "Edit Surge profiles with structured editors, a live preview of the .conf and a tester that shows which rule a URL matches.",
+          "install": {
+            "label": "See it on the showcase site",
+            "url": "https://fanbb2333.github.io/SurgeKit/"
+          },
+          "platform": "macOS"
+        },
+        {
+          "repo": "walioss",
+          "pitch": "A desktop browser for Alibaba Cloud OSS: tabs, an editable oss:// address bar, previews and an upload/download queue.",
+          "install": {
+            "label": "Download for macOS or Windows",
+            "url": "https://github.com/FanBB2333/walioss/releases/latest"
+          },
+          "platform": "macOS and Windows"
+        }
+      ]
+    },
+    {
+      "id": "latex",
+      "title": "Papers & LaTeX",
+      "small": "read it, write it",
+      "accent": "red",
+      "intro": "Reading other people's LaTeX, and writing your own outside the browser tab.",
+      "projects": [
+        {
+          "repo": "arXivTeXplorer",
+          "name": "XTX (arXivTeXplorer)",
+          "releases": false,
+          "pitch": "A Chrome extension that opens any arXiv paper's TeX source in a VS Code-style viewer, with a file tree and highlighting.",
+          "install": {
+            "label": "Add to Chrome",
+            "url": "https://chromewebstore.google.com/detail/xtx-arxivtexplorer/iomijbopnmaeglhgacifddihfbjaknha"
+          },
+          "platform": "Chrome"
+        },
+        {
+          "repo": "downleaf",
+          "pitch": "Mount Overleaf projects as a local folder and edit them in any editor, or with Claude Code; changes sync back on save.",
+          "install": {
+            "cmd": "go install github.com/FanBB2333/downleaf/cmd/downleaf@latest"
+          },
+          "links": [
+            {
+              "label": "Mac app",
+              "url": "https://github.com/FanBB2333/downleaf/releases/latest"
+            }
+          ],
+          "platform": "macOS and Linux"
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "small": "odd devices, meet the Mac",
+      "accent": "blue",
+      "intro": "Getting unusual hardware to talk to a Mac.",
+      "projects": [
+        {
+          "repo": "vodjive",
+          "releases": false,
+          "pitch": "Use the first-generation DJI 4G dongle as a USB modem on macOS, with an AT console, SMS and eSIM tools.",
+          "install": {
+            "label": "Build from source",
+            "url": "https://github.com/FanBB2333/vodjive/tree/main/tools/vodjive-mac"
+          },
+          "platform": "macOS"
+        },
+        {
+          "repo": "MTM",
+          "name": "MTM (Mifare Tool)",
+          "releases": false,
+          "pitch": "A macOS app for reading and writing Mifare Classic cards with a PN532 NFC module.",
+          "install": {
+            "label": "Build from source",
+            "url": "https://github.com/FanBB2333/MTM#readme"
+          },
+          "platform": "macOS"
+        }
+      ]
+    },
+    {
+      "id": "campus",
+      "title": "Campus life",
+      "small": "PolyU & ZJU",
+      "accent": "green",
+      "intro": "Small fixes for university systems: subject registration, VPNs that drop, and waiting for results.",
+      "projects": [
+        {
+          "repo": "PolySubReg",
+          "releases": false,
+          "pitch": "A Chrome extension that makes PolyU subject registration searchable, with timetables, vacancies and clash checks inline.",
+          "install": {
+            "label": "Build and load in Chrome",
+            "url": "https://github.com/FanBB2333/PolySubReg#readme"
+          },
+          "platform": "Chrome"
+        },
+        {
+          "repo": "PolyGP",
+          "releases": false,
+          "pitch": "The PolyU GlobalProtect VPN in a Docker container, with a web panel for the MFA login and a local SOCKS5 proxy.",
+          "install": {
+            "cmd": "git clone https://github.com/FanBB2333/PolyGP.git && cd PolyGP && cp .env.example .env && docker compose up -d --build"
+          },
+          "platform": "Docker"
+        },
+        {
+          "repo": "Unblind",
+          "pitch": "A desktop app that watches ZJU thesis blind-review results and sends a Bark notification when they change.",
+          "install": {
+            "label": "Download for macOS or Windows",
+            "url": "https://github.com/FanBB2333/Unblind/releases/latest"
+          },
+          "platform": "macOS and Windows"
+        },
+        {
+          "repo": "AutoAtrust",
+          "releases": false,
+          "pitch": "A watchdog that signs a dropped aTrust VPN session back in, by looking at the remote desktop over SSH and VNC.",
+          "install": {
+            "cmd": "pip install -r requirements.txt && python3 auto_atrust.py"
+          },
+          "platform": "macOS and Linux"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Agent skills",
+      "small": "drop-in behaviours",
+      "accent": "red",
+      "kind": "notes",
+      "intro": "Skills that change how a coding agent reasons or writes. They work with Claude Code, Codex and other agents that read SKILL.md files.",
+      "after_html": "To use one, copy its folder into your agent's skills directory, for example <code>.claude/skills/&lt;name&gt;/</code> for Claude Code.",
+      "projects": [
+        {
+          "repo": "HundredSchools.skill",
+          "name": "HundredSchools",
+          "releases": false,
+          "pitch": "Fourteen schools of philosophy, from Daoism to Popper, turned into planning and checking strategies, with a guide for picking one per task."
+        },
+        {
+          "repo": "FeynGrill",
+          "releases": false,
+          "pitch": "The model grills its own draft for gaps and jargon first, then explains the answer from first principles."
+        },
+        {
+          "repo": "Pulz",
+          "releases": false,
+          "pitch": "Debug in four diagnostic phases, borrowed from traditional Chinese medicine, before writing a minimal fix with a test."
+        },
+        {
+          "repo": "Humandex.skill",
+          "name": "Humandex",
+          "releases": false,
+          "pitch": "Strips corporate jargon, filler openers and flattery from GPT models' Chinese output."
+        },
+        {
+          "repo": "GPTify.skill",
+          "name": "GPTify",
+          "releases": false,
+          "pitch": "The opposite direction: gives Claude, Gemini and other models GPT's chatty Chinese style."
+        },
+        {
+          "repo": "SIGMEOW.skill",
+          "name": "SIGMEOW",
+          "releases": false,
+          "pitch": "A joke skill: a cat walks across the keyboard and leaves harmless mischief in the agent's code."
+        }
+      ]
+    }
+  ]
+}

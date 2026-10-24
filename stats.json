@@ -1,0 +1,230 @@
+{
+  "synced": "2026-10-24T08:49:53Z",
+  "repos": {
+    "nvidb": {
+      "stars": 4,
+      "language": "Python",
+      "pushed_at": "2026-10-23T07:04:58Z",
+      "homepage": "https://pypi.org/project/nvidb",
+      "url": "https://github.com/FanBB2333/nvidb",
+      "archived": false,
+      "version": "1.9.2"
+    },
+    "FakeGPU": {
+      "stars": 9,
+      "language": "Python",
+      "pushed_at": "2026-10-23T11:06:40Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/FakeGPU",
+      "archived": false,
+      "version": "v1.6.0"
+    },
+    "nVertake": {
+      "stars": 1,
+      "language": "Python",
+      "pushed_at": "2026-08-05T14:45:01Z",
+      "homepage": "https://pypi.org/project/nvertake/",
+      "url": "https://github.com/FanBB2333/nVertake",
+      "archived": false,
+      "version": "0.2.0"
+    },
+    "metop": {
+      "stars": 1,
+      "language": "Python",
+      "pushed_at": "2026-03-17T15:00:28Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/metop",
+      "archived": false,
+      "version": "0.2.1"
+    },
+    "ccs-panel": {
+      "stars": 11,
+      "language": "Rust",
+      "pushed_at": "2026-04-07T06:03:07Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/ccs-panel",
+      "archived": false,
+      "version": "v0.2.2"
+    },
+    "skim": {
+      "stars": 2,
+      "language": "TypeScript",
+      "pushed_at": "2026-04-23T09:45:10Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/skim",
+      "archived": false,
+      "version": null
+    },
+    "ptyrelay": {
+      "stars": 1,
+      "language": "Go",
+      "pushed_at": "2026-05-12T01:55:51Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/ptyrelay",
+      "archived": false,
+      "version": null
+    },
+    "code-local": {
+      "stars": 0,
+      "language": "Go",
+      "pushed_at": "2026-04-16T09:44:35Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/code-local",
+      "archived": false,
+      "version": null
+    },
+    "AnyMachine": {
+      "stars": 0,
+      "language": null,
+      "pushed_at": "2026-10-05T16:12:48Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/AnyMachine",
+      "archived": false,
+      "version": null
+    },
+    "SurgeKit": {
+      "stars": 0,
+      "language": "TypeScript",
+      "pushed_at": "2026-04-26T15:19:38Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/SurgeKit",
+      "archived": false,
+      "version": null
+    },
+    "walioss": {
+      "stars": 5,
+      "language": "Go",
+      "pushed_at": "2026-03-22T15:03:33Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/walioss",
+      "archived": false,
+      "version": "v0.2.4-r1"
+    },
+    "arXivTeXplorer": {
+      "stars": 4,
+      "language": "TypeScript",
+      "pushed_at": "2026-03-16T14:44:42Z",
+      "homepage": "https://chromewebstore.google.com/detail/xtx-arxivtexplorer/iomijbopnmaeglhgacifddihfbjaknha",
+      "url": "https://github.com/FanBB2333/arXivTeXplorer",
+      "archived": false,
+      "version": null
+    },
+    "downleaf": {
+      "stars": 3,
+      "language": "Go",
+      "pushed_at": "2026-04-29T11:50:21Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/downleaf",
+      "archived": false,
+      "version": "v0.3.6"
+    },
+    "vodjive": {
+      "stars": 2,
+      "language": "Go",
+      "pushed_at": "2026-07-27T12:21:02Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/vodjive",
+      "archived": false,
+      "version": null
+    },
+    "MTM": {
+      "stars": 4,
+      "language": "Dart",
+      "pushed_at": "2025-12-08T13:00:36Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/MTM",
+      "archived": false,
+      "version": null
+    },
+    "PolySubReg": {
+      "stars": 1,
+      "language": "TypeScript",
+      "pushed_at": "2026-08-30T02:47:12Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/PolySubReg",
+      "archived": false,
+      "version": null
+    },
+    "PolyGP": {
+      "stars": 2,
+      "language": "Python",
+      "pushed_at": "2026-09-09T06:07:54Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/PolyGP",
+      "archived": false,
+      "version": null
+    },
+    "Unblind": {
+      "stars": 5,
+      "language": "TypeScript",
+      "pushed_at": "2026-04-27T02:13:15Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/Unblind",
+      "archived": false,
+      "version": "v0.2.0"
+    },
+    "AutoAtrust": {
+      "stars": 0,
+      "language": "Python",
+      "pushed_at": "2026-07-10T07:08:56Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/AutoAtrust",
+      "archived": false,
+      "version": null
+    },
+    "HundredSchools.skill": {
+      "stars": 1,
+      "language": "TypeScript",
+      "pushed_at": "2026-05-12T17:34:18Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/HundredSchools.skill",
+      "archived": false,
+      "version": null
+    },
+    "FeynGrill": {
+      "stars": 0,
+      "language": null,
+      "pushed_at": "2026-04-09T15:23:27Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/FeynGrill",
+      "archived": false,
+      "version": null
+    },
+    "Pulz": {
+      "stars": 0,
+      "language": "Python",
+      "pushed_at": "2026-04-09T15:46:04Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/Pulz",
+      "archived": false,
+      "version": null
+    },
+    "Humandex.skill": {
+      "stars": 1,
+      "language": null,
+      "pushed_at": "2026-04-11T09:40:59Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/Humandex.skill",
+      "archived": false,
+      "version": null
+    },
+    "GPTify.skill": {
+      "stars": 1,
+      "language": null,
+      "pushed_at": "2026-04-12T03:07:03Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/GPTify.skill",
+      "archived": false,
+      "version": null
+    },
+    "SIGMEOW.skill": {
+      "stars": 0,
+      "language": null,
+      "pushed_at": "2026-04-10T01:13:50Z",
+      "homepage": null,
+      "url": "https://github.com/FanBB2333/SIGMEOW.skill",
+      "archived": false,
+      "version": null
+    }
+  }
+}

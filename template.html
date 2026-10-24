@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta name="theme-color" content="#f5f2e9" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="L1ght's open-source shelf" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:url" content="{{SITE_URL}}" />
+    <meta property="og:image" content="{{SITE_URL}}assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>L1ght's open-source shelf</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="preload" href="./assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script>
+      document.documentElement.classList.add('js')
+      try {
+        const t = localStorage.getItem('l1ght-home:theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch {}
+    </script>
+  </head>
+  <body data-github="{{OWNER}}">
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="./">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 15 L20 9 L34 15 L20 21 Z" />
+            <path d="M6 15 C6 21 6.4 27 6 31 L20 37 L34 31 C33.6 26 34 21 34 15" />
+            <path d="M20 21 C20 26 20.3 31 20 37" />
+          </svg>
+          <span class="brand-name">L1ght</span>
+          <span class="brand-sub">open-source shelf</span>
+        </a>
+        <nav class="nav" aria-label="Page">
+          <a href="#projects">Projects</a>
+          <a href="https://github.com/{{OWNER}}" rel="me">GitHub</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" data-sketch="box" data-sketch-wobble="1.2">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 L15 7 L18 10 L7 21 L3.5 21.5 Z M15 7 L17 5 L20 8 L18 10" /></svg>
+            <span class="theme-label">Chalkboard</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-text">
+            <p class="eyebrow">
+              <svg class="eyebrow-star" viewBox="0 0 24 24" aria-hidden="true"><path class="draw" pathLength="1" d="M12 3 L14.2 9.6 L21 9.8 L15.6 13.9 L17.6 20.6 L12 16.6 L6.4 20.6 L8.4 13.9 L3 9.8 L9.8 9.6 Z" /></svg>
+              Open source, shipped tools only
+            </p>
+            <h1>Small tools I built for myself, <span class="marker">open for you to use</span>.</h1>
+            <p class="lead">{{LEAD}}</p>
+            <p class="tally">
+              <span class="tally-item"><span class="circled" data-sketch="circle">{{N_PROJECTS}}</span> projects</span> on
+              <span class="tally-item"><span class="circled" data-sketch="circle">{{N_SECTIONS}}</span> shelves</span>,
+              <span class="tally-item"><span class="circled" data-sketch="circle"><span data-stars-total>{{N_STARS}}</span></span> stars on GitHub</span>
+            </p>
+            <div class="hero-actions">
+              <a class="cta" href="#projects" data-sketch="box" data-sketch-wobble="1.4">
+                Browse the shelf
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 C12.4 9 11.6 14 12 19 M6.5 13.5 C8.5 15.5 10.5 17.5 12 19.5 C13.6 17.4 15.4 15.6 17.5 13.5" /></svg>
+              </a>
+              <a class="text-link" href="https://github.com/{{OWNER}}" rel="me">github.com/{{OWNER}}</a>
+            </div>
+          </div>
+
+          <figure class="hero-doodle" aria-label="Sketch: a package box being installed into a terminal window">
+            <svg viewBox="0 0 420 300" role="img" aria-hidden="true">
+              <g class="doodle-ink">
+                <path class="draw d1" pathLength="1" d="M30 46 C110 43 200 47 292 44 C294 100 291 160 293 222 C200 224 110 221 28 223 C27 160 31 100 30 46 Z" />
+                <path class="draw d1 faint" pathLength="1" d="M33 49 C112 47 200 50 289 48 C291 100 288 160 290 219" />
+                <path class="draw d2" pathLength="1" d="M29 76 C120 74 210 78 293 75" />
+                <circle class="pop d2" cx="48" cy="61" r="4.5" />
+                <circle class="pop d2" cx="65" cy="61" r="4.5" />
+                <circle class="pop d2" cx="82" cy="61" r="4.5" />
+              </g>
+              <g class="doodle-term">
+                <text class="fade d2" x="46" y="114">$ pip install nvidb</text>
+                <text class="fade d4 ok" x="74" y="152">installed, ready to go</text>
+                <text class="fade d5" x="46" y="190">$ nvidb</text>
+              </g>
+              <path class="draw d4 doodle-check" pathLength="1" d="M48 143 C51 146 54 149 57 152 C61 146 66 140 71 136" />
+              <rect class="doodle-cursor fade d5" x="110" y="172" width="10" height="22" rx="1.5" />
+              <g class="doodle-box">
+                <path class="draw d3" pathLength="1" d="M318 196 C340 195 362 197 384 195 C385 218 383 242 385 266 C362 267 340 265 317 267 C318 244 316 220 318 196 Z" />
+                <path class="draw d3" pathLength="1" d="M318 196 C326 189 333 183 340 177 C362 176 384 178 405 176 C398 183 391 189 384 195" />
+                <path class="draw d3" pathLength="1" d="M405 176 C406 200 404 222 406 245 C399 252 392 259 385 266" />
+                <path class="draw d4 tape" pathLength="1" d="M351 196 C357 190 364 184 372 177" />
+                <text class="doodle-label fade d4" x="351" y="240" text-anchor="middle">v0.2</text>
+              </g>
+              <g class="doodle-red">
+                <path class="draw d5" pathLength="1" d="M330 184 C320 150 300 128 262 118" />
+                <path class="draw d6" pathLength="1" d="M273 110 C269 113 266 116 260 118 C265 121 268 125 271 129" />
+              </g>
+              <path class="draw d6 doodle-star" pathLength="1" d="M372 70 L375.5 79.5 L385 80 L377.5 86 L380.5 95.5 L372 90 L363.5 95.5 L366.5 86 L359 80 L368.5 79.5 Z" />
+              <text class="doodle-note" x="160" y="28" text-anchor="middle">if it installs and runs, it ships</text>
+            </svg>
+            <figcaption class="margin-note">The lines are drawn by a script, a little differently on every visit ✎</figcaption>
+          </figure>
+        </section>
+
+        <nav aria-label="Shelves">
+          <ul class="shelf-index">
+{{SHELF_INDEX}}
+          </ul>
+        </nav>
+
+        <div id="projects">
+{{SECTIONS}}
+        </div>
+      </main>
+
+      <footer class="footer">
+        <svg class="footer-rule" viewBox="0 0 600 14" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M2 8 C60 4 110 11 170 7 C240 3 300 10 370 7 C440 4 520 10 598 6" />
+        </svg>
+        <p>© {{YEAR}} L1ght. Only released, ready-to-use projects live here; research prototypes and forks don't.</p>
+        <p class="footer-note" id="sync-note" data-live="Stars are live from GitHub; versions synced on {{SYNCED}}">Stars and versions synced from GitHub on {{SYNCED}}</p>
+      </footer>
+    </div>
+
+    <script src="./assets/site.js" defer></script>
+  </body>
+</html>
