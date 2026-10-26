@@ -12,12 +12,12 @@ The style follows the course notebook (`~/repos/poly-cources/home`): paper / cha
 | `stats.json` | Numbers from GitHub / PyPI: stars, language, last push, latest version. Written by `build.py --fetch`; the committed copy is what the CI build falls back to when GitHub cannot be reached. |
 | `template.html` | Page skeleton with `{{PLACEHOLDERS}}`. |
 | `build.py` | Renders `index.html` (Python standard library only). |
-| `assets/` | `style.css`, `site.js`, `favicon.svg`, `og.png` (social preview), fonts. |
+| `assets/` | `style.css`, `site.js`, `favicon.svg`, `og.png` (social preview), `avatar.jpg` (GitHub avatar shown in the top bar, 160 px), fonts. |
 | `.github/workflows/pages.yml` | Builds the page and publishes it to GitHub Pages. |
 
 ## Edit the list
 
-1. Change `projects.json`. A project needs `repo` and `pitch`; optional: `install` (`{"cmd": "..."}` for a copyable command, or `{"label": "...", "url": "..."}` for a store / download link), `platform`, `links`, `pypi` (version comes from PyPI instead of GitHub releases), `releases: false` (no version stamp), `featured` (pencil shading under the card), `name`, `language`, `stamp`.
+1. Change `projects.json`. A section with `"hidden": true` stays in the file but is left off the page. A project needs `repo` and `pitch`; optional: `install` (`{"cmd": "..."}` for a copyable command, or `{"label": "...", "url": "..."}` for a store / download link), `platform`, `links`, `pypi` (version comes from PyPI instead of GitHub releases), `releases: false` (no version stamp), `featured` (pencil shading under the card), `name`, `language`, `stamp`.
 2. `python3 build.py --fetch` and open `index.html` through a local server: `python3 -m http.server 8080`, then http://localhost:8080/. `index.html` is build output and stays out of git.
 3. Commit and push to `main`.
 

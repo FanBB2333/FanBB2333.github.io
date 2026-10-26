@@ -95,8 +95,13 @@ def fetch(cfg: dict, old: dict) -> dict:
 
 # ---------------------------------------------------------------- render
 
+def shown_sections(cfg: dict) -> list[dict]:
+    """Sections marked "hidden" stay in projects.json but are left off the page."""
+    return [s for s in cfg['sections'] if not s.get('hidden')]
+
+
 def all_projects(cfg: dict):
-    for s in cfg['sections']:
+    for s in shown_sections(cfg):
         yield from s['projects']
 
 
@@ -187,7 +192,8 @@ def render(cfg: dict, stats: dict) -> str:
     repos = stats.get('repos', {})
     shelf, sections = [], []
     n_projects = n_stars = 0
-    for i, s in enumerate(cfg['sections'], 1):
+    shown = shown_sections(cfg)
+    for i, s in enumerate(shown, 1):
         no = f'{i:02d}'
         accent = f'var(--{s["accent"]})'
         count = len(s['projects'])
@@ -215,7 +221,7 @@ def render(cfg: dict, stats: dict) -> str:
         'OWNER': esc(owner),
         'LEAD': esc(cfg['lead']),
         'N_PROJECTS': str(n_projects),
-        'N_SECTIONS': str(len(cfg['sections'])),
+        'N_SECTIONS': str(len(shown)),
         'N_STARS': str(n_stars),
         'SHELF_INDEX': '\n'.join(shelf),
         'SECTIONS': '\n'.join(sections),

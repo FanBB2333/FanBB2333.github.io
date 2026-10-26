@@ -1,8 +1,8 @@
 {
   "owner": "FanBB2333",
   "site_url": "https://fanbb2333.github.io/",
-  "description": "Open-source tools by L1ght: GPU monitoring and sharing, remote development and coding-agent tools, desktop apps, LaTeX helpers, hardware and campus utilities.",
-  "lead": "These are the open-source tools I have built and released: for GPU servers, remote development and coding agents, desktop configs, LaTeX, odd hardware and campus life. Each one comes with a way to install or open it. Research prototypes stay off this page.",
+  "description": "L1ght's open-source tools: GPU monitoring and sharing, remote development and coding-agent tools, desktop apps, LaTeX helpers, and hardware hacks such as a NAS-hosted phone line.",
+  "lead": "Each one started as a fix for a real problem: shared GPU servers, coding agents, papers and odd hardware. Every tool here is released, with a way to install or open it. Research prototypes stay off this page.",
   "sections": [
     {
       "id": "gpu",
@@ -170,10 +170,23 @@
     {
       "id": "hardware",
       "title": "Hardware",
-      "small": "odd devices, meet the Mac",
+      "small": "odd devices, put to work",
       "accent": "blue",
-      "intro": "Getting unusual hardware to talk to a Mac.",
+      "intro": "Getting unusual hardware to talk to a Mac or a NAS.",
       "projects": [
+        {
+          "repo": "CBD",
+          "name": "CBD (CellBridge-Docker)",
+          "featured": true,
+          "releases": false,
+          "language": "Go",
+          "pitch": "Turn the first-generation DJI 4G module and a SIM card into a second line for your iPhone: a Docker gateway on your NAS carries VoLTE calls and SMS over Tailscale, and YakPhone rings even when the phone is locked.",
+          "install": {
+            "label": "Deploy with Docker Compose",
+            "url": "https://github.com/FanBB2333/CBD#getting-started"
+          },
+          "platform": "Docker on a NAS"
+        },
         {
           "repo": "vodjive",
           "releases": false,
@@ -199,6 +212,7 @@
     },
     {
       "id": "campus",
+      "hidden": true,
       "title": "Campus life",
       "small": "PolyU & ZJU",
       "accent": "green",
