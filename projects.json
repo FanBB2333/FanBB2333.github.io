@@ -1,7 +1,7 @@
 {
   "owner": "FanBB2333",
   "site_url": "https://fanbb2333.github.io/",
-  "description": "L1ght's open-source tools: GPU monitoring and sharing, remote development and coding-agent tools, desktop apps, LaTeX helpers, and hardware hacks such as a NAS-hosted phone line.",
+  "description": "L1ght's open-source tools: GPU monitoring and sharing, remote development and coding-agent tools, desktop apps, LaTeX helpers, frontend templates, and hardware hacks such as a NAS-hosted phone line.",
   "lead": "Each one started as a fix for a real problem: shared GPU servers, coding agents, papers and odd hardware. Every tool here is released, with a way to install or open it. Research prototypes stay off this page.",
   "sections": [
     {
@@ -164,6 +164,24 @@
             }
           ],
           "platform": "macOS and Linux"
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "title": "Web templates",
+      "small": "copy a folder, own it",
+      "accent": "green",
+      "intro": "Frontend starting points pulled out of real projects: copy one folder, swap in your own content, and it builds and deploys on its own.",
+      "projects": [
+        {
+          "repo": "Frontier",
+          "releases": false,
+          "pitch": "Copy-ready Vite + React templates for an annotation console, a slide deck, a product page and a progress report, all on one toolchain with light and dark themes. Try each one with sample data in the live gallery.",
+          "install": {
+            "cmd": "npx degit FanBB2333/Frontier/slides my-deck"
+          },
+          "platform": "Node and pnpm"
         }
       ]
     },

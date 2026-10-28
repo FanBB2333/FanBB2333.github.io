@@ -1,5 +1,5 @@
 {
-  "synced": "2026-10-25T07:26:19Z",
+  "synced": "2026-10-28T07:52:51Z",
   "repos": {
     "nvidb": {
       "stars": 4,
@@ -117,6 +117,15 @@
       "url": "https://github.com/FanBB2333/downleaf",
       "archived": false,
       "version": "v0.3.6"
+    },
+    "Frontier": {
+      "stars": 0,
+      "language": "TypeScript",
+      "pushed_at": "2026-10-28T06:07:29Z",
+      "homepage": "https://fanbb2333.github.io/Frontier/",
+      "url": "https://github.com/FanBB2333/Frontier",
+      "archived": false,
+      "version": null
     },
     "CBD": {
       "stars": 0,
