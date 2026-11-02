@@ -177,7 +177,7 @@
         {
           "repo": "Frontier",
           "releases": false,
-          "pitch": "Copy-ready Vite + React templates for an annotation console, a slide deck, a product page and a progress report, all on one toolchain with light and dark themes. Try each one with sample data in the live gallery.",
+          "pitch": "Copy-ready Vite + React templates for an annotation console, a slide deck, a product page, a progress report and a side-by-side paper reader, all on one toolchain with light and dark themes. Try each one with sample data in the live gallery.",
           "install": {
             "cmd": "npx degit FanBB2333/Frontier/slides my-deck"
           },
